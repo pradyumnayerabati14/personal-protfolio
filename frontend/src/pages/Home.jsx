@@ -81,22 +81,22 @@ const Home = () => {
             {/* Text Content */}
             <div className="text-center md:text-left">
               <div className="relative inline-block mb-6">
-                <div className="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full"></div>
+                <div className="absolute inset-0 bg-gray-800/10 blur-3xl rounded-full"></div>
                 <h1 className="relative text-5xl md:text-6xl font-bold text-gray-900 mb-4">
                   {mockData.hero.name}
                 </h1>
               </div>
-              <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 font-semibold">
+              <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-6 font-semibold">
                 {mockData.hero.title}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 {mockData.hero.description}
               </p>
               <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-                <Button onClick={() => scrollToSection('projects')} size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/30">
+                <Button onClick={() => scrollToSection('projects')} size="lg" className="bg-gray-900 hover:bg-gray-800 text-white shadow-lg">
                   View Projects
                 </Button>
-                <Button onClick={handleDownloadCV} size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Button onClick={handleDownloadCV} size="lg" variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-50">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Button>
@@ -106,7 +106,7 @@ const Home = () => {
             {/* Photo */}
             <div className="flex justify-center md:justify-end">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-gray-700 to-gray-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                 <div className="relative">
                   <img 
                     src={mockData.hero.image} 
@@ -121,8 +121,8 @@ const Home = () => {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {mockData.hero.stats.map((stat, index) => (
-              <div key={index} className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
-                <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-1">{stat.value}</div>
+              <div key={index} className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="text-3xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
