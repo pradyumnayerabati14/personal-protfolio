@@ -39,10 +39,10 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="bg-white border-gray-200 shadow-sm">
+    <Card className="bg-white border-blue-100 shadow-sm">
       <CardHeader>
         <div className="flex items-center gap-2 mb-2">
-          <Mail className="h-6 w-6 text-gray-900" />
+          <Mail className="h-6 w-6 text-blue-600" />
           <CardTitle className="text-gray-900">Send Me a Message</CardTitle>
         </div>
         <CardDescription className="text-gray-600">
@@ -61,7 +61,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Your name"
                 required
-                className="border-gray-300 focus:border-gray-900 focus:ring-gray-900"
+                className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             <div className="space-y-2">
@@ -74,7 +74,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="your.email@example.com"
                 required
-                className="border-gray-300 focus:border-gray-900 focus:ring-gray-900"
+                className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -87,7 +87,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="What's this about?"
               required
-              className="border-gray-300 focus:border-gray-900 focus:ring-gray-900"
+              className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
           <div className="space-y-2">
@@ -100,13 +100,13 @@ const ContactForm = () => {
               placeholder="Your message..."
               required
               rows={6}
-              className="border-gray-300 focus:border-gray-900 focus:ring-gray-900 resize-none"
+              className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
             />
           </div>
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gray-900 hover:bg-gray-800 text-white"
+            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
           >
             {isSubmitting ? (
               'Sending...'
