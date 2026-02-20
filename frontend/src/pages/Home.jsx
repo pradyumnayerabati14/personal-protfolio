@@ -146,19 +146,21 @@ const Home = () => {
               </p>
               <div className="flex gap-3 flex-wrap">
                 {mockData.about.highlights.map((highlight, index) => (
-                  <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-900 hover:bg-gray-200">
+                  <Badge key={index} variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200">
                     {highlight}
                   </Badge>
                 ))}
               </div>
             </div>
-            <Card className="bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <Card className="bg-white border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-gray-900">Quick Facts</CardTitle>
+                <CardTitle className="text-gray-900 flex items-center gap-2">
+                  <span className="text-blue-600">Quick Facts</span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Code className="h-5 w-5 text-gray-900 mt-0.5" />
+                  <Code className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Current Role</div>
                     <div className="text-sm text-gray-600">{mockData.about.currentRole}</div>
@@ -166,7 +168,7 @@ const Home = () => {
                 </div>
                 <Separator />
                 <div className="flex items-start gap-3">
-                  <Brain className="h-5 w-5 text-gray-900 mt-0.5" />
+                  <Brain className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Education</div>
                     <div className="text-sm text-gray-600">{mockData.about.education}</div>
@@ -174,7 +176,7 @@ const Home = () => {
                 </div>
                 <Separator />
                 <div className="flex items-start gap-3">
-                  <Zap className="h-5 w-5 text-gray-900 mt-0.5" />
+                  <Zap className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Specialization</div>
                     <div className="text-sm text-gray-600">{mockData.about.specialization}</div>
