@@ -234,14 +234,14 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Education</h2>
           <div className="space-y-6">
             {mockData.education.map((edu, index) => (
-              <Card key={index} className="bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <Card key={index} className="bg-white border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="text-gray-900 mb-2">{edu.degree}</CardTitle>
                       <CardDescription className="text-gray-700 font-medium">{edu.institution}</CardDescription>
                     </div>
-                    <Badge variant="secondary" className="bg-gray-100 text-gray-900">{edu.year}</Badge>
+                    <Badge variant="secondary" className="bg-blue-50 text-blue-700 border border-blue-200">{edu.year}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -251,7 +251,7 @@ const Home = () => {
                   </div>
                   {edu.achievements && (
                     <div className="mt-4">
-                      <div className="text-sm font-medium text-gray-900 mb-2">Key Achievements:</div>
+                      <div className="text-sm font-medium text-blue-700 mb-2">Key Achievements:</div>
                       <ul className="text-sm text-gray-600 space-y-1">
                         {edu.achievements.map((achievement, idx) => (
                           <li key={idx}>• {achievement}</li>
@@ -276,11 +276,11 @@ const Home = () => {
             {mockData.interests.map((interest, index) => {
               const IconComponent = interest.icon === 'BookOpen' ? BookOpen : interest.icon === 'Zap' ? Zap : Activity;
               return (
-                <Card key={index} className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                <Card key={index} className="bg-white border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 bg-gray-100 rounded-lg">
-                        <IconComponent className="h-6 w-6 text-gray-900" />
+                      <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                        <IconComponent className="h-6 w-6 text-blue-600" />
                       </div>
                       <CardTitle className="text-gray-900">{interest.title}</CardTitle>
                     </div>
@@ -290,12 +290,12 @@ const Home = () => {
               );
             })}
           </div>
-          <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-none text-white">
+          <Card className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border-none text-white shadow-xl">
             <CardContent className="py-8">
               <blockquote className="text-lg italic text-center leading-relaxed">
                 "{mockData.favoriteQuote.text}"
               </blockquote>
-              <p className="text-center mt-4 text-gray-400">— {mockData.favoriteQuote.author}</p>
+              <p className="text-center mt-4 text-blue-200">— {mockData.favoriteQuote.author}</p>
             </CardContent>
           </Card>
         </div>
