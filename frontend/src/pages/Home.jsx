@@ -43,18 +43,18 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FAFAF9] via-[#F0F9FF] to-[#FFF8F0]">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAF9] via-[#F5F5F5] to-[#FFF8F0]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-100 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Pradyumna Yerabati</h1>
+          <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">Pradyumna Yerabati</h1>
           <div className="hidden md:flex gap-6">
             {['hero', 'about', 'experience', 'projects', 'skills', 'education', 'interests', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 capitalize ${
-                  activeSection === section ? 'text-blue-600' : 'text-gray-600'
+                className={`text-sm font-medium transition-colors hover:text-gray-900 capitalize ${
+                  activeSection === section ? 'text-gray-900' : 'text-gray-600'
                 }`}
               >
                 {section}
@@ -62,10 +62,10 @@ const Home = () => {
             ))}
           </div>
           <div className="flex gap-3">
-            <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Github className="h-5 w-5" />
             </a>
-            <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
