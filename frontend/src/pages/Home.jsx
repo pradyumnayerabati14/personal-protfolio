@@ -312,37 +312,37 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
+      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white py-12 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Pradyumna Yerabati</h3>
-              <p className="text-gray-400 text-sm">Software Engineer specializing in backend optimization and machine learning.</p>
+              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">Pradyumna Yerabati</h3>
+              <p className="text-gray-300 text-sm">Software Engineer specializing in AI/ML and building innovative solutions.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-semibold mb-4 text-blue-300">Quick Links</h4>
               <div className="space-y-2 text-sm">
-                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">About</button>
-                <button onClick={() => scrollToSection('projects')} className="block text-gray-400 hover:text-white transition-colors">Projects</button>
-                <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">Contact</button>
+                <button onClick={() => scrollToSection('about')} className="block text-gray-300 hover:text-blue-400 transition-colors">About</button>
+                <button onClick={() => scrollToSection('projects')} className="block text-gray-300 hover:text-blue-400 transition-colors">Projects</button>
+                <button onClick={() => scrollToSection('contact')} className="block text-gray-300 hover:text-blue-400 transition-colors">Contact</button>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4 text-blue-300">Connect</h4>
               <div className="flex gap-4">
-                <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href={`mailto:${mockData.contact.email}`} className="text-gray-400 hover:text-white transition-colors">
+                <a href={`mailto:${mockData.contact.email}`} className="text-gray-300 hover:text-blue-400 transition-colors">
                   <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
-          <Separator className="bg-gray-800 mb-8" />
+          <Separator className="bg-blue-900/50 mb-8" />
           <div className="text-center text-sm text-gray-400">
             © {new Date().getFullYear()} Pradyumna Yerabati. All rights reserved.
           </div>
