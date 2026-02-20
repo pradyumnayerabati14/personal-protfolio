@@ -107,8 +107,6 @@ export const mockData = {
       technologies: ["Python", "Deep Learning", "Reinforcement Learning", "TensorFlow"],
       featured: false,
       links: null
-        demo: null
-      }
     }
   ],
   skills: [
