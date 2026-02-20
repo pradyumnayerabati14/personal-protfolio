@@ -43,18 +43,18 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FAFAF9] via-[#FFF8F0] to-[#FAFAF9]">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAFAF9] via-[#F0F9FF] to-[#FFF8F0]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-gray-900">Pradyumna Yerabati</h1>
+          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Pradyumna Yerabati</h1>
           <div className="hidden md:flex gap-6">
             {['hero', 'about', 'experience', 'projects', 'skills', 'education', 'interests', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`text-sm font-medium transition-colors hover:text-gray-900 capitalize ${
-                  activeSection === section ? 'text-gray-900' : 'text-gray-600'
+                className={`text-sm font-medium transition-colors hover:text-blue-600 capitalize ${
+                  activeSection === section ? 'text-blue-600' : 'text-gray-600'
                 }`}
               >
                 {section}
@@ -62,10 +62,10 @@ const Home = () => {
             ))}
           </div>
           <div className="flex gap-3">
-            <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
               <Github className="h-5 w-5" />
             </a>
-            <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
@@ -74,34 +74,55 @@ const Home = () => {
 
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${
+        <div className={`max-w-6xl mx-auto transition-all duration-1000 ${
           isVisible.hero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="relative inline-block mb-6">
-            <div className="absolute inset-0 bg-gray-900/5 blur-3xl rounded-full"></div>
-            <h1 className="relative text-6xl md:text-7xl font-bold text-gray-900 mb-4">
-              {mockData.hero.name}
-            </h1>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              <div className="relative inline-block mb-6">
+                <div className="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full"></div>
+                <h1 className="relative text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                  {mockData.hero.name}
+                </h1>
+              </div>
+              <h2 className="text-2xl md:text-3xl bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 font-semibold">
+                {mockData.hero.title}
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                {mockData.hero.description}
+              </p>
+              <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+                <Button onClick={() => scrollToSection('projects')} size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/30">
+                  View Projects
+                </Button>
+                <Button onClick={handleDownloadCV} size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </div>
+            </div>
+            
+            {/* Photo */}
+            <div className="flex justify-center md:justify-end">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                <div className="relative">
+                  <img 
+                    src={mockData.hero.image} 
+                    alt="Pradyumna Yerabati"
+                    className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl border-4 border-white"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 className="text-2xl md:text-3xl text-gray-700 mb-6 font-medium">
-            {mockData.hero.title}
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            {mockData.hero.description}
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button onClick={() => scrollToSection('projects')} size="lg" className="bg-gray-900 hover:bg-gray-800 text-white">
-              View Projects
-            </Button>
-            <Button onClick={handleDownloadCV} size="lg" variant="outline" className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white">
-              <Download className="mr-2 h-4 w-4" />
-              Download CV
-            </Button>
-          </div>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          
+          {/* Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {mockData.hero.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
+              <div key={index} className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
+                <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-1">{stat.value}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
