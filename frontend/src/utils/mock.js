@@ -1,14 +1,15 @@
 export const mockData = {
   hero: {
     name: "Pradyumna Yerabati",
-    title: "Software Engineer & Technical Lead",
-    description: "Master's student at Texas A&M University specializing in backend optimization, machine learning, and scalable system architecture. Passionate about solving complex problems through algorithmic thinking and data-driven solutions.",
+    title: "Software Engineer | AI/ML Enthusiast",
+    description: "Master's student at Texas A&M University passionate about software development, machine learning, and building scalable solutions. Experienced in backend optimization, deep learning, and solving complex algorithmic challenges.",
     stats: [
-      { value: "3+", label: "Years Experience" },
+      { value: "1.5+", label: "Years Experience" },
       { value: "10+", label: "Projects Delivered" },
       { value: "300+", label: "Problems Solved" },
       { value: "99.11%", label: "JEE Percentile" }
-    ]
+    ],
+    image: "https://customer-assets.emergentagent.com/job_resume-gallery-11/artifacts/acqwn0d2_1000251047.JPG"
   },
   contact: {
     email: "pradyumna1402@tamu.edu",
@@ -17,16 +18,16 @@ export const mockData = {
     linkedin: "https://linkedin.com/in/pradyumna-yerabati"
   },
   about: {
-    bio: "I'm a Master's student in Computer Science at Texas A&M University, currently working as a Technical Lead at HCL Technologies. My journey in software engineering has been driven by a passion for optimization and efficiency, where I've successfully reduced processing times from days to hours through innovative solutions.",
-    focus: "My expertise lies at the intersection of backend development, machine learning, and system optimization. I thrive on challenges that require deep algorithmic thinking and have demonstrated this through published research and production-grade implementations that serve thousands of clients.",
-    currentRole: "Technical Lead at HCL Technologies",
+    bio: "I'm a Master's student in Computer Science at Texas A&M University. During my time at HCL Technologies, I developed a passion for optimization and efficiency, successfully reducing processing times from days to hours through innovative solutions.",
+    focus: "My expertise lies at the intersection of software development, machine learning, and system optimization. I thrive on challenges that require deep algorithmic thinking and love building production-grade implementations that make a real impact.",
+    currentRole: "Graduate Student at Texas A&M University",
     education: "MS Computer Science, Texas A&M University",
-    specialization: "Backend Optimization & ML Systems",
+    specialization: "Software Development & AI/ML",
     highlights: [
-      "Published Researcher",
       "99.11 Percentile JEE Mains",
       "300+ LeetCode Problems",
-      "5-Star SQL Rating"
+      "5-Star SQL Rating",
+      "Deep Learning Enthusiast"
     ]
   },
   experience: [
@@ -34,11 +35,11 @@ export const mockData = {
       role: "Technical Lead",
       company: "HCL Technologies",
       location: "Bangalore, India",
-      duration: "July 2023 - Present",
+      duration: "July 2023 - January 2026",
       highlights: [
         "Led optimization of BigFix IVR backend infrastructure, reducing data processing time for 50,000+ client records from 3 days to 3 hours",
         "Designed and deployed robust mock server architectures for large-scale production environments",
-        "Spearheaded advanced techniques for front-end API interception and UI testing",
+        "Developed advanced techniques for front-end API interception and UI testing",
         "Built PDF Translator using LangChain and LLama models for intelligent document parsing",
         "Leveraged Data Structures and Algorithms to optimize code performance and system architecture"
       ],
@@ -61,37 +62,31 @@ export const mockData = {
   projects: [
     {
       title: "BigFix IVR Backend Optimization",
-      description: "Enterprise-scale backend optimization reducing processing time by 95%",
+      description: "Enterprise-scale backend optimization reducing processing time by 95% at HCL Technologies",
       achievements: [
         "Reduced processing time from 3 days to 3 hours for 50,000+ clients",
         "Improved system scalability and operational efficiency",
-        "Published white paper in HCL Central Engineering Newsletter"
+        "Recognized with white paper publication in HCL Central Engineering Newsletter"
       ],
       technologies: ["Python", "MySQL", "Performance Tuning", "Load Balancing"],
       featured: true,
-      links: {
-        github: null,
-        demo: null
-      }
+      links: null
     },
     {
       title: "Simulated Server Environments",
-      description: "Enterprise-grade mock servers for Tenable.io, Tenable.sc, and Rapid7 APIs",
+      description: "Enterprise-grade mock servers for Tenable.io, Tenable.sc, and Rapid7 APIs at HCL Technologies",
       achievements: [
-        "Built comprehensive testing infrastructure",
+        "Built comprehensive testing infrastructure for BigFix IVR",
         "Enabled backend performance testing and validation",
-        "Accelerated feature development cycles"
+        "Accelerated feature development cycles significantly"
       ],
       technologies: ["Flask", "Faker", "Pandas", "SQLite3", "Postman"],
       featured: true,
-      links: {
-        github: null,
-        demo: null
-      }
+      links: null
     },
     {
       title: "BigFix IVR WebUI Automation",
-      description: "Automated testing framework for frontend-backend integration",
+      description: "Automated testing framework for frontend-backend integration at HCL Technologies",
       achievements: [
         "Built Puppeteer-based framework for API interception",
         "Captured real-time performance metrics",
@@ -99,10 +94,7 @@ export const mockData = {
       ],
       technologies: ["Node.js", "Puppeteer", "JavaScript", "Git"],
       featured: false,
-      links: {
-        github: "https://github.com/pradyumnayerabati14",
-        demo: null
-      }
+      links: null
     },
     {
       title: "Distribution System Resilience Using DRL",
