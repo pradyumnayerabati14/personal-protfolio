@@ -4,7 +4,7 @@ export const mockData = {
     title: "Software Engineer | AI/ML Enthusiast",
     description: "Master's student at Texas A&M University passionate about software development, machine learning, and building scalable solutions. Experienced in backend optimization, deep learning, and solving complex algorithmic challenges.",
     stats: [
-      { value: "1.5+", label: "Years Experience" },
+      { value: "3+", label: "Years Experience" },
       { value: "10+", label: "Projects Delivered" },
       { value: "300+", label: "Problems Solved" },
       { value: "99.11%", label: "JEE Percentile" }
