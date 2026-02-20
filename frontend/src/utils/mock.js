@@ -105,9 +105,8 @@ export const mockData = {
         "Modeled dynamic scenarios on IEEE 13-bus distribution system"
       ],
       technologies: ["Python", "Deep Learning", "Reinforcement Learning", "TensorFlow"],
-      featured: true,
-      links: {
-        github: null,
+      featured: false,
+      links: null
         demo: null
       }
     }
