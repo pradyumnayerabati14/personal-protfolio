@@ -146,21 +146,21 @@ const Home = () => {
               </p>
               <div className="flex gap-3 flex-wrap">
                 {mockData.about.highlights.map((highlight, index) => (
-                  <Badge key={index} variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200">
+                  <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-300">
                     {highlight}
                   </Badge>
                 ))}
               </div>
             </div>
-            <Card className="bg-white border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
+            <Card className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-gray-900 flex items-center gap-2">
-                  <span className="text-blue-600">Quick Facts</span>
+                  <span className="text-gray-800">Quick Facts</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Code className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <Code className="h-5 w-5 text-gray-700 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Current Role</div>
                     <div className="text-sm text-gray-600">{mockData.about.currentRole}</div>
@@ -168,7 +168,7 @@ const Home = () => {
                 </div>
                 <Separator />
                 <div className="flex items-start gap-3">
-                  <Brain className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <Brain className="h-5 w-5 text-gray-700 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Education</div>
                     <div className="text-sm text-gray-600">{mockData.about.education}</div>
@@ -176,7 +176,7 @@ const Home = () => {
                 </div>
                 <Separator />
                 <div className="flex items-start gap-3">
-                  <Zap className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <Zap className="h-5 w-5 text-gray-700 mt-0.5" />
                   <div>
                     <div className="font-medium text-gray-900">Specialization</div>
                     <div className="text-sm text-gray-600">{mockData.about.specialization}</div>
@@ -234,14 +234,14 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Education</h2>
           <div className="space-y-6">
             {mockData.education.map((edu, index) => (
-              <Card key={index} className="bg-white border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
+              <Card key={index} className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="text-gray-900 mb-2">{edu.degree}</CardTitle>
                       <CardDescription className="text-gray-700 font-medium">{edu.institution}</CardDescription>
                     </div>
-                    <Badge variant="secondary" className="bg-blue-50 text-blue-700 border border-blue-200">{edu.year}</Badge>
+                    <Badge variant="secondary" className="bg-gray-100 text-gray-800 border border-gray-300">{edu.year}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -251,7 +251,7 @@ const Home = () => {
                   </div>
                   {edu.achievements && (
                     <div className="mt-4">
-                      <div className="text-sm font-medium text-blue-700 mb-2">Key Achievements:</div>
+                      <div className="text-sm font-medium text-gray-800 mb-2">Key Achievements:</div>
                       <ul className="text-sm text-gray-600 space-y-1">
                         {edu.achievements.map((achievement, idx) => (
                           <li key={idx}>• {achievement}</li>
@@ -276,11 +276,11 @@ const Home = () => {
             {mockData.interests.map((interest, index) => {
               const IconComponent = interest.icon === 'BookOpen' ? BookOpen : interest.icon === 'Zap' ? Zap : Activity;
               return (
-                <Card key={index} className="bg-white border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
+                <Card key={index} className="bg-white border-gray-200 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
-                        <IconComponent className="h-6 w-6 text-blue-600" />
+                      <div className="p-3 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl">
+                        <IconComponent className="h-6 w-6 text-gray-700" />
                       </div>
                       <CardTitle className="text-gray-900">{interest.title}</CardTitle>
                     </div>
@@ -290,12 +290,12 @@ const Home = () => {
               );
             })}
           </div>
-          <Card className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border-none text-white shadow-xl">
+          <Card className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border-none text-white shadow-xl">
             <CardContent className="py-8">
               <blockquote className="text-lg italic text-center leading-relaxed">
                 "{mockData.favoriteQuote.text}"
               </blockquote>
-              <p className="text-center mt-4 text-blue-200">— {mockData.favoriteQuote.author}</p>
+              <p className="text-center mt-4 text-gray-400">— {mockData.favoriteQuote.author}</p>
             </CardContent>
           </Card>
         </div>
@@ -312,37 +312,37 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white py-12 px-6">
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">Pradyumna Yerabati</h3>
+              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">Pradyumna Yerabati</h3>
               <p className="text-gray-300 text-sm">Software Engineer specializing in AI/ML and building innovative solutions.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-blue-300">Quick Links</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">Quick Links</h4>
               <div className="space-y-2 text-sm">
-                <button onClick={() => scrollToSection('about')} className="block text-gray-300 hover:text-blue-400 transition-colors">About</button>
-                <button onClick={() => scrollToSection('projects')} className="block text-gray-300 hover:text-blue-400 transition-colors">Projects</button>
-                <button onClick={() => scrollToSection('contact')} className="block text-gray-300 hover:text-blue-400 transition-colors">Contact</button>
+                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-gray-200 transition-colors">About</button>
+                <button onClick={() => scrollToSection('projects')} className="block text-gray-400 hover:text-gray-200 transition-colors">Projects</button>
+                <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-gray-200 transition-colors">Contact</button>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-blue-300">Connect</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">Connect</h4>
               <div className="flex gap-4">
-                <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a href={mockData.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200 transition-colors">
                   <Github className="h-5 w-5" />
                 </a>
-                <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a href={mockData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200 transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href={`mailto:${mockData.contact.email}`} className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a href={`mailto:${mockData.contact.email}`} className="text-gray-400 hover:text-gray-200 transition-colors">
                   <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
-          <Separator className="bg-blue-900/50 mb-8" />
+          <Separator className="bg-gray-700 mb-8" />
           <div className="text-center text-sm text-gray-400">
             © {new Date().getFullYear()} Pradyumna Yerabati. All rights reserved.
           </div>

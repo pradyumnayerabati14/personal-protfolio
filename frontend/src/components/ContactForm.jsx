@@ -6,6 +6,10 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { toast } from '../hooks/use-toast';
 import { Mail, Send } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -27,22 +31,33 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock submission - will be connected to backend later
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${API}/contact`, formData);
+      
+      if (response.status === 200) {
+        toast({
+          title: 'Message Sent!',
+          description: 'Thank you for reaching out. I\'ll get back to you soon.',
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch (error) {
       toast({
-        title: 'Message Sent!',
-        description: 'Thank you for reaching out. I\'ll get back to you soon.',
+        title: 'Error',
+        description: 'Failed to send message. Please try again later.',
+        variant: 'destructive'
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      console.error('Error sending message:', error);
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
-    <Card className="bg-white border-blue-100 shadow-sm">
+    <Card className="bg-white border-gray-200 shadow-sm">
       <CardHeader>
         <div className="flex items-center gap-2 mb-2">
-          <Mail className="h-6 w-6 text-blue-600" />
+          <Mail className="h-6 w-6 text-gray-700" />
           <CardTitle className="text-gray-900">Send Me a Message</CardTitle>
         </div>
         <CardDescription className="text-gray-600">
@@ -61,7 +76,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Your name"
                 required
-                className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+                className="border-gray-300 focus:border-gray-700 focus:ring-gray-700"
               />
             </div>
             <div className="space-y-2">
@@ -74,7 +89,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="your.email@example.com"
                 required
-                className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+                className="border-gray-300 focus:border-gray-700 focus:ring-gray-700"
               />
             </div>
           </div>
@@ -87,7 +102,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="What's this about?"
               required
-              className="border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+              className="border-gray-300 focus:border-gray-700 focus:ring-gray-700"
             />
           </div>
           <div className="space-y-2">
@@ -100,13 +115,13 @@ const ContactForm = () => {
               placeholder="Your message..."
               required
               rows={6}
-              className="border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
+              className="border-gray-300 focus:border-gray-700 focus:ring-gray-700 resize-none"
             />
           </div>
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+            className="w-full bg-gray-900 hover:bg-gray-800 text-white"
           >
             {isSubmitting ? (
               'Sending...'
