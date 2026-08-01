@@ -38,8 +38,9 @@ const Home = () => {
   };
 
   const handleDownloadCV = () => {
-    // Download from backend API
-    window.open(`${process.env.REACT_APP_BACKEND_URL}/api/download-cv`, '_blank');
+    // Download directly from GitHub
+    const resumeUrl = 'https://github.com/pradyumnayerabati14/personal-protfolio/raw/main/backend/static/Pradyumna_CV.pdf';
+    window.open(resumeUrl, '_blank');
   };
 
   return (

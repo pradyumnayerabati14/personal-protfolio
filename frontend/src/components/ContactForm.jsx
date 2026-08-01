@@ -7,8 +7,6 @@ import { Label } from './ui/label';
 import { toast } from '../hooks/use-toast';
 import { Mail, Send } from 'lucide-react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -29,41 +27,21 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: 'Message Sent Successfully!',
-          description: 'Thank you for reaching out. I\'ll get back to you soon.',
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
-        variant: 'destructive'
-      });
-      console.error('Error sending message:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Use mailto for contact (opens email client)
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Hi Pradyumna,\n\n${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`
+    );
+    
+    window.location.href = `mailto:pradyumna1402@tamu.edu?subject=${subject}&body=${body}`;
+    
+    toast({
+      title: 'Opening Email Client',
+      description: 'Your email client will open with the pre-filled message.',
+    });
+    
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
   };
 
   return (
