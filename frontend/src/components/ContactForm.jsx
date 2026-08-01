@@ -28,20 +28,19 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Use FormData to avoid CORS preflight issues
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', 'd32491b0-86db-4e40-9631-197a900a1dbe');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('from_name', 'Portfolio Contact Form');
+      formDataToSend.append('replyto', formData.email);
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'd32491b0-86db-4e40-9631-197a900a1dbe',
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          from_name: 'Portfolio Contact Form',
-          replyto: formData.email,
-        }),
+        body: formDataToSend
       });
 
       const result = await response.json();
