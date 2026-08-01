@@ -194,9 +194,9 @@ frontend:
     implemented: true
     working: false
     file: "/app/frontend/src/components/ContactForm.jsx"
-    stuck_count: 1
+    stuck_count: 2
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
@@ -204,6 +204,9 @@ frontend:
       - working: false
         agent: "testing"
         comment: "CRITICAL BUG: Web3Forms integration failing due to CORS error. Tested on both localhost:3000 and production URL (https://resume-gallery-11.preview.emergentagent.com). Error: 'Access to fetch at https://api.web3forms.com/submit blocked by CORS policy: No Access-Control-Allow-Origin header'. Root cause: Using fetch with application/json Content-Type triggers CORS preflight that Web3Forms rejects. Solution: Must use FormData() instead of JSON.stringify() per Web3Forms documentation. Form submission fails, no toast appears, fields not cleared. Web3Forms API call is made but blocked by browser."
+      - working: false
+        agent: "testing"
+        comment: "RE-TESTED AFTER FORMDATA FIX - CORS ERROR STILL PERSISTS. FormData implementation is CORRECT in ContactForm.jsx (lines 31-44), but CORS error still occurs on both localhost:3000 and production. ROOT CAUSE IDENTIFIED: Emergent platform's fetch wrapper (emergent-main.js:387) is intercepting fetch calls and causing CORS issues. Error stack trace shows: 'TypeError: Failed to fetch at window.fetch (https://assets.emergent.sh/scripts/emergent-main.js:387:8)'. This is a PLATFORM-LEVEL issue that cannot be fixed by changing frontend code. Web3Forms API itself works (confirmed via curl), but browser requests are blocked by Emergent's fetch interception. RECOMMENDED SOLUTION: Switch from Web3Forms to backend API endpoint /api/contact which is already implemented and working (tested in backend tests). Form submission fails, no success toast, fields not cleared, no response received from Web3Forms."
   
   - task: "Navigation"
     implemented: true
@@ -232,12 +235,12 @@ frontend:
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: false
 
 test_plan:
   current_focus:
-    - "Contact form Web3Forms integration - CRITICAL BUG"
+    - "Contact form - Switch from Web3Forms to backend API"
   stuck_tasks:
     - "Contact form"
   test_all: false
@@ -248,3 +251,5 @@ agent_communication:
     message: "BACKEND TESTING COMPLETE - All 6 backend API endpoints tested and working perfectly (100% pass rate). Created backend_test.py for comprehensive API testing. NOTE: Frontend is configured for STATIC DEPLOYMENT - resume download uses GitHub raw URL and contact form uses mailto link (NOT using backend APIs). Review request asks for frontend testing but per system instructions, I cannot test frontend without user permission."
   - agent: "testing"
     message: "WEB3FORMS INTEGRATION TESTING COMPLETE - CRITICAL BUG FOUND: Contact form submission fails with CORS error on both localhost and production. The issue is in /app/frontend/src/components/ContactForm.jsx - currently using fetch with 'application/json' Content-Type which triggers CORS preflight that Web3Forms rejects. SOLUTION: Change from JSON.stringify() to FormData() per Web3Forms documentation. Tested: form renders correctly, fields can be filled, submit button works, but API call is blocked by browser CORS policy. No success toast appears, form fields not cleared after submission. This is a blocking issue that prevents the contact form from working at all."
+  - agent: "testing"
+    message: "WEB3FORMS FORMDATA FIX RE-TEST COMPLETE - CORS ERROR PERSISTS DESPITE CORRECT IMPLEMENTATION. Tested on both localhost:3000 and production URL. FormData implementation in ContactForm.jsx is CORRECT (lines 31-44), but CORS error still occurs. ROOT CAUSE: Emergent platform's fetch wrapper (emergent-main.js) is intercepting fetch calls and causing CORS issues that cannot be fixed from frontend code. This is a PLATFORM-LEVEL issue. Web3Forms API itself works (confirmed via curl test), but browser requests are blocked by Emergent's fetch interception. RECOMMENDATION: Switch from Web3Forms to backend API endpoint /api/contact which is already implemented, tested, and working perfectly. Backend API has proper CORS configuration and will work without issues. stuck_count incremented to 2."
