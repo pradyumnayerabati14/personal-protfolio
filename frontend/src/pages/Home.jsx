@@ -38,9 +38,8 @@ const Home = () => {
   };
 
   const handleDownloadCV = () => {
-    // For GitHub Pages/Vercel deployment, link directly to resume
-    const resumeUrl = 'https://github.com/pradyumnayerabati14/personal-protfolio/raw/main/backend/static/Pradyumna_CV.pdf';
-    window.open(resumeUrl, '_blank');
+    // Download from backend API
+    window.open(`${process.env.REACT_APP_BACKEND_URL}/api/download-cv`, '_blank');
   };
 
   return (
