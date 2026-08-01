@@ -6,10 +6,6 @@ import { Button } from './ui/button';
 import { Label } from './ui/label';
 import { toast } from '../hooks/use-toast';
 import { Mail, Send } from 'lucide-react';
-import axios from 'axios';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -31,22 +27,44 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // For static deployment, use mailto link
-    const subject = encodeURIComponent(formData.subject);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:pradyumna1402@tamu.edu?subject=${subject}&body=${body}`;
-    
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: 'Opening Email Client',
-      description: 'Your default email client will open with the message.',
-    });
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'd32491b0-86db-4e40-9631-197a900a1dbe',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+          replyto: formData.email,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: 'Message Sent Successfully!',
+          description: 'Thank you for reaching out. I\'ll get back to you soon.',
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again later.',
+        variant: 'destructive'
+      });
+      console.error('Error sending message:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
