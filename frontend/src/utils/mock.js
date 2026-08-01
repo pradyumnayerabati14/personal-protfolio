@@ -32,7 +32,7 @@ export const mockData = {
   },
   experience: [
     {
-      role: "Technical Lead",
+      role: "Software Development Enginner",
       company: "HCL Technologies",
       location: "Bangalore, India",
       duration: "July 2023 - January 2026",
