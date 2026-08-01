@@ -102,11 +102,11 @@ async def download_cv():
     cv_path = ROOT_DIR / "static" / "Pradyumna_CV.pdf"
     
     if not cv_path.exists():
-        raise HTTPException(status_code=404, detail="CV file not found")
+        raise HTTPException(status_code=404, detail="Resume file not found")
     
     return FileResponse(
         path=cv_path,
-        filename="Pradyumna_Yerabati_CV.pdf",
+        filename="Pradyumna_Yerabati_Resume.pdf",
         media_type="application/pdf"
     )
 

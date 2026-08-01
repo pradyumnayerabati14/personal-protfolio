@@ -98,7 +98,7 @@ const Home = () => {
                 </Button>
                 <Button onClick={handleDownloadCV} size="lg" variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-50">
                   <Download className="mr-2 h-4 w-4" />
-                  Download CV
+                  Download Resume
                 </Button>
               </div>
             </div>

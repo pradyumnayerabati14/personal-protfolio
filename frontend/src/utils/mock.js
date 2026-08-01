@@ -4,7 +4,7 @@ export const mockData = {
     title: "Software Engineer | AI/ML Enthusiast",
     description: "Master's student at Texas A&M University passionate about software development, machine learning, and building scalable solutions. Experienced in backend optimization, deep learning, and solving complex algorithmic challenges.",
     stats: [
-      { value: "3+", label: "Years Experience" },
+      { value: "2+", label: "Years Experience" },
       { value: "10+", label: "Projects Delivered" },
       { value: "300+", label: "Problems Solved" },
       { value: "99.11%", label: "JEE Percentile" }
@@ -85,6 +85,31 @@ export const mockData = {
       links: null
     },
     {
+      title: "WisdomLinked",
+      description: "Production full-stack mentorship platform connecting students with domain experts",
+      achievements: [
+        "Built and maintain RESTful backend APIs with Node.js, Express.js, and MongoDB",
+        "Implemented JWT auth, session management, OTP-based 2FA, and OAuth integration",
+        "Integrated Digital Ocean Spaces for scalable cloud storage with AWS S3 SDK",
+        "Containerized deployments with Docker behind Nginx reverse proxy"
+      ],
+      technologies: ["Node.js", "Express.js", "MongoDB", "React.js", "Docker", "Stripe", "PayPal"],
+      featured: false,
+      links: null
+    },
+    {
+      title: "Intelligent Whiteboard Agent",
+      description: "AI-assisted development tool with embedded chat agent for architecture diagrams",
+      achievements: [
+        "Built Excalidraw whiteboard with AI agent generating diagrams from natural language",
+        "Implemented real-time WebSocket communication",
+        "Structured prompt workflows to convert instructions into precise diagram components"
+      ],
+      technologies: ["React.js", "Node.js", "OpenAI API", "Excalidraw", "WebSockets"],
+      featured: false,
+      links: null
+    },
+    {
       title: "BigFix IVR WebUI Automation",
       description: "Automated testing framework for frontend-backend integration at HCL Technologies",
       achievements: [
@@ -93,18 +118,6 @@ export const mockData = {
         "Enabled early detection of performance bottlenecks"
       ],
       technologies: ["Node.js", "Puppeteer", "JavaScript", "Git"],
-      featured: false,
-      links: null
-    },
-    {
-      title: "Distribution System Resilience Using DRL",
-      description: "Final year project applying deep reinforcement learning to power systems",
-      achievements: [
-        "Applied DRL to enhance power distribution system resilience",
-        "Designed deep neural network control agent using Q-learning",
-        "Modeled dynamic scenarios on IEEE 13-bus distribution system"
-      ],
-      technologies: ["Python", "Deep Learning", "Reinforcement Learning", "TensorFlow"],
       featured: false,
       links: null
     }
@@ -166,8 +179,8 @@ export const mockData = {
       degree: "Master of Science in Computer Science",
       institution: "Texas A&M University",
       location: "College Station, Texas, USA",
-      year: "Expected 2025",
-      gpa: null,
+      year: "Expected 2027",
+      gpa: "4.0/4.0",
       achievements: [
         "Advanced coursework in Operating Systems, Analysis of Algorithms, and Deep Learning",
         "Focus on algorithmic optimization and data-driven research"
@@ -178,7 +191,7 @@ export const mockData = {
       institution: "National Institute of Technology, Warangal",
       location: "Warangal, India",
       year: "2019 - 2023",
-      gpa: "7.62/10.0",
+      gpa: null,
       achievements: [
         "Final Year Project: Distribution System Resilience Using Deep Reinforcement Learning",
         "A grade in Data Structures and Algorithms",
