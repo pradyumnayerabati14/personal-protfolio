@@ -5,9 +5,9 @@ export const mockData = {
     description: "Master's student at Texas A&M University passionate about software development, machine learning, and building scalable solutions. Experienced in backend optimization, deep learning, and solving complex algorithmic challenges.",
     stats: [
       { value: "2+", label: "Years Experience" },
-      { value: "10+", label: "Projects Delivered" },
+      { value: "5+", label: "Major Projects" },
       { value: "300+", label: "Problems Solved" },
-      { value: "99.11%", label: "JEE Percentile" }
+      { value: "4.0", label: "TAMU GPA" }
     ],
     image: "https://customer-assets.emergentagent.com/job_resume-gallery-11/artifacts/acqwn0d2_1000251047.JPG"
   },
@@ -24,10 +24,10 @@ export const mockData = {
     education: "MS Computer Science, Texas A&M University",
     specialization: "Software Development & AI/ML",
     highlights: [
-      "99.11 Percentile JEE Mains",
       "300+ LeetCode Problems",
       "5-Star SQL Rating",
-      "Deep Learning Enthusiast"
+      "Deep Learning Enthusiast",
+      "Full Stack Developer"
     ]
   },
   experience: [
@@ -205,8 +205,8 @@ export const mockData = {
       year: "2018",
       gpa: "97.9%",
       achievements: [
-        "99.11 percentile in JEE Mains 2019 (top 0.89% among 960,000 applicants)",
-        "Excellence in Mathematics and Physics"
+        "Excellence in Mathematics and Physics",
+        "State-level academic achievements"
       ]
     }
   ],

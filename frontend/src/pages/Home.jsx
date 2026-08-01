@@ -306,7 +306,20 @@ const Home = () => {
         <div className={`max-w-3xl mx-auto transition-all duration-1000 ${
           isVisible.contact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Get In Touch</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Let's Build Something Great Together</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Whether you're looking to discuss exciting opportunities, collaborate on innovative projects, 
+              or simply connect with a fellow engineer—I'm always open to exploring new possibilities and creating 
+              meaningful solutions.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-2 text-gray-700">
+              <Mail className="h-5 w-5" />
+              <a href={`mailto:${mockData.contact.email}`} className="text-lg font-medium hover:text-gray-900 transition-colors">
+                {mockData.contact.email}
+              </a>
+            </div>
+          </div>
           <ContactForm />
         </div>
       </section>
