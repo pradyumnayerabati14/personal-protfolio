@@ -38,8 +38,9 @@ const Home = () => {
   };
 
   const handleDownloadCV = () => {
-    // This will be connected to backend later
-    window.open('/api/download-cv', '_blank');
+    // For GitHub Pages/Vercel deployment, link directly to resume
+    const resumeUrl = 'https://github.com/pradyumnayerabati14/personal-protfolio/raw/main/backend/static/Pradyumna_CV.pdf';
+    window.open(resumeUrl, '_blank');
   };
 
   return (

@@ -1,0 +1,6 @@
+backend/
+*.py
+requirements.txt
+.env
+.git
+node_modules

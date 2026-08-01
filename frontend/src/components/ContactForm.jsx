@@ -31,26 +31,22 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const response = await axios.post(`${API}/contact`, formData);
-      
-      if (response.status === 200) {
-        toast({
-          title: 'Message Sent!',
-          description: 'Thank you for reaching out. I\'ll get back to you soon.',
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      }
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
-        variant: 'destructive'
-      });
-      console.error('Error sending message:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    // For static deployment, use mailto link
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:pradyumna1402@tamu.edu?subject=${subject}&body=${body}`;
+    
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: 'Opening Email Client',
+      description: 'Your default email client will open with the message.',
+    });
+    
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
   };
 
   return (
