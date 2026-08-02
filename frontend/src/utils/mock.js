@@ -213,7 +213,7 @@ export const mockData = {
   interests: [
     {
       title: "Spirituality & Philosophy",
-      description: "Deep interest in spiritual teachings of Krishnamurti, Osho, and Acharya Prashant. Regular meditation and mindfulness practice.",
+      description: "Deep interest in spiritual teachings of Krishnamurti, Osho, and Acharya Prashant",
       icon: "Zap"
     },
     {
