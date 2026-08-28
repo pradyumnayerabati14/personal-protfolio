@@ -6,7 +6,7 @@ export const mockData = {
     stats: [
       { value: "2+", label: "Years Experience" },
       { value: "5+", label: "Major Projects" },
-      { value: "300+", label: "Problems Solved" },
+      { value: "1000+", label: "Problems Solved" },
       { value: "4.0", label: "TAMU GPA" }
     ],
     image: "https://customer-assets.emergentagent.com/job_resume-gallery-11/artifacts/acqwn0d2_1000251047.JPG"
@@ -24,7 +24,7 @@ export const mockData = {
     education: "MS Computer Science, Texas A&M University",
     specialization: "Software Development & AI/ML",
     highlights: [
-      "300+ LeetCode Problems",
+      "1000+ Algorithmic Problems",
       "5-Star SQL Rating",
       "Deep Learning Enthusiast",
       "Full Stack Developer"
