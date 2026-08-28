@@ -61,28 +61,43 @@ export const mockData = {
   ],
   projects: [
     {
-      title: "BigFix IVR Backend Optimization",
-      description: "Enterprise-scale backend optimization reducing processing time by 95% at HCL Technologies",
+      title: "BigFix IVR Platform Engineering",
+      description: "End-to-end backend optimization, mock server infrastructure, and automated WebUI testing for BigFix IVR at HCL Technologies",
       achievements: [
-        "Reduced processing time from 3 days to 3 hours for 50,000+ clients",
-        "Improved system scalability and operational efficiency",
-        "Recognized with white paper publication in HCL Central Engineering Newsletter"
+        "Reduced processing time from 3 days to 3 hours for 50,000+ clients through backend optimization and load balancing",
+        "Built enterprise-grade simulated server environments for Tenable.io, Tenable.sc, and Rapid7 APIs, enabling backend performance testing at scale",
+        "Developed a Puppeteer-based WebUI automation framework with API interception and real-time performance metrics for early bottleneck detection",
+        "Recognized with a white paper publication in the HCL Central Engineering Newsletter"
       ],
-      technologies: ["Python", "MySQL", "Performance Tuning", "Load Balancing"],
+      technologies: ["Python", "Flask", "MySQL", "SQLite3", "Node.js", "Puppeteer", "Pandas", "Faker", "Postman", "Performance Tuning"],
       featured: true,
       links: null
     },
     {
-      title: "Simulated Server Environments",
-      description: "Enterprise-grade mock servers for Tenable.io, Tenable.sc, and Rapid7 APIs at HCL Technologies",
+      title: "RAGForge",
+      description: "Production-oriented document QA service built on incremental indexing, hybrid retrieval, and citation-grounded generation",
       achievements: [
-        "Built comprehensive testing infrastructure for BigFix IVR",
-        "Enabled backend performance testing and validation",
-        "Accelerated feature development cycles significantly"
+        "Designed a hybrid retrieval pipeline fusing pgvector HNSW dense search with BM25-style full-text search via reciprocal rank fusion",
+        "Implemented incremental content-hash indexing so only changed document chunks are re-embedded, with idempotent retries via stable UUIDs",
+        "Added cross-encoder reranking and citation-constrained generation that treats retrieved text as untrusted context",
+        "Built a PySpark batch ingestion job and a RAGAS evaluation harness reporting faithfulness, answer relevancy, and per-stage latency"
       ],
-      technologies: ["Flask", "Faker", "Pandas", "SQLite3", "Postman"],
+      technologies: ["Python", "FastAPI", "PostgreSQL", "pgvector", "PySpark", "LangChain", "RAGAS", "Docker"],
       featured: true,
-      links: null
+      links: { github: "https://github.com/pradyumnayerabati14/RAGForge" }
+    },
+    {
+      title: "Bare-Metal x86 File-System Kernel",
+      description: "Freestanding 32-bit x86 kernel in C++ and NASM booting under QEMU with an inode-based file system",
+      achievements: [
+        "Implemented a persistent inode table and free-block allocator supporting file create, lookup, sequential read/write, reset, and deletion",
+        "Extended the file system with single-level index blocks for large files up to 64 KiB",
+        "Drove an ATA disk through LBA28 programmed I/O for raw block reads and writes",
+        "Worked across the kernel substrate: GDT/IDT setup, interrupt dispatch and PIC/IRQ routing, physical frame pool, and kernel heap allocator"
+      ],
+      technologies: ["C++", "NASM Assembly", "x86", "QEMU", "GDB", "Make"],
+      featured: true,
+      links: { github: "https://github.com/pradyumnayerabati14/x86-filesystem-design", githubLabel: "Design Notes" }
     },
     {
       title: "WisdomLinked",
@@ -106,18 +121,6 @@ export const mockData = {
         "Structured prompt workflows to convert instructions into precise diagram components"
       ],
       technologies: ["React.js", "Node.js", "OpenAI API", "Excalidraw", "WebSockets"],
-      featured: false,
-      links: null
-    },
-    {
-      title: "BigFix IVR WebUI Automation",
-      description: "Automated testing framework for frontend-backend integration at HCL Technologies",
-      achievements: [
-        "Built Puppeteer-based framework for API interception",
-        "Captured real-time performance metrics",
-        "Enabled early detection of performance bottlenecks"
-      ],
-      technologies: ["Node.js", "Puppeteer", "JavaScript", "Git"],
       featured: false,
       links: null
     }

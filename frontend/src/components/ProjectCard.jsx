@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
                 onClick={() => window.open(project.links.github, '_blank')}
               >
                 <Github className="mr-2 h-4 w-4" />
-                Code
+                {project.links.githubLabel || 'Code'}
               </Button>
             )}
             {project.links.demo && (
