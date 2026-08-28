@@ -32,7 +32,7 @@ export const mockData = {
   },
   experience: [
     {
-      role: "Software Development Enginner",
+      role: "Software Development Engineer",
       company: "HCL Technologies",
       location: "Bangalore, India",
       duration: "July 2023 - January 2026",
@@ -40,7 +40,7 @@ export const mockData = {
         "Led optimization of BigFix IVR backend infrastructure, reducing data processing time for 50,000+ client records from 3 days to 3 hours",
         "Designed and deployed robust mock server architectures for large-scale production environments",
         "Developed advanced techniques for front-end API interception and UI testing",
-        "Built PDF Translator using LangChain and LLama models for intelligent document parsing",
+        "Built PDF Translator using LangChain and Llama models for intelligent document parsing",
         "Leveraged Data Structures and Algorithms to optimize code performance and system architecture"
       ],
       technologies: ["Python", "Flask", "Node.js", "Puppeteer", "MySQL", "Jenkins", "Git"]
