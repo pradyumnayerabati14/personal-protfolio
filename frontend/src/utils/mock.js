@@ -111,18 +111,6 @@ export const mockData = {
       technologies: ["Node.js", "Express.js", "MongoDB", "React.js", "Docker", "Stripe", "PayPal"],
       featured: false,
       links: null
-    },
-    {
-      title: "Intelligent Whiteboard Agent",
-      description: "AI-assisted development tool with embedded chat agent for architecture diagrams",
-      achievements: [
-        "Built Excalidraw whiteboard with AI agent generating diagrams from natural language",
-        "Implemented real-time WebSocket communication",
-        "Structured prompt workflows to convert instructions into precise diagram components"
-      ],
-      technologies: ["React.js", "Node.js", "OpenAI API", "Excalidraw", "WebSockets"],
-      featured: false,
-      links: null
     }
   ],
   skills: [
